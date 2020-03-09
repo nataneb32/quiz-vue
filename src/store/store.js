@@ -7,6 +7,7 @@ function createStore(){
 return new Vuex.Store({
     state:{
         stage: 0,
+        finish: false,
         history: [],
         answers: [],
         questions:[ //here is the questions that are made 
@@ -43,13 +44,28 @@ return new Vuex.Store({
     },
     actions:{
         nextStage(context,answer){
+
+            const finishCmd = {
+                execute(state){
+                    state.finish = true
+                    return true
+                },
+                undo(state){
+                    state.finish = false
+                },
+                redo(state){
+                    state.finish = true
+                }
+            }
+
             const cmd = {
                 execute(state){
                     //check if there is another question
                     if(state.questions.length-1 <= state.stage){
+                        context.commit('executeCommand',finishCmd)
+                        state.answers.push(answer)
                         return false
                     }
-
                     state.stage++
                     state.answers.push(answer)
                     return true

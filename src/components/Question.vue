@@ -13,17 +13,6 @@
 <script>
 export default {
     name: "Question",
-    data(){
-        return{
-            title: "Titulo da pergunta?",
-            options:[
-                {img: "https://via.placeholder.com/300x200"},
-                {img: "https://via.placeholder.com/300x200"},
-                {img: "https://via.placeholder.com/300x200"},
-                {img: "https://via.placeholder.com/300x200"}
-            ]
-        }
-    },
     computed:{
         question(){
             console.log(this.$store.state.history)

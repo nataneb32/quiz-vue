@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <Question/>
+
+    <Question v-if="finish"/>
+    <Result v-else/>
   </div>
 </template>
 
 <script>
 import Question from './components/Question'
+import Result from './components/Result'
 export default {
   name: 'App',
+  computed:{
+    finish(){
+      return !this.$store.state.finish
+    }
+  },
   components:{
-    Question
+    Question,
+    Result
   }
 }
 </script>
