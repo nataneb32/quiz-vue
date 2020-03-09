@@ -1,9 +1,8 @@
 <template>
-    <div>
-    <div>Finish</div>
-    <div v-for="(answer,index) in answers" :key="index"> 
-        {{answer}}
-    </div>
+    <div id="root">
+        <div class="center">
+            <div>Esse é o seu resultado</div>
+        </div>
     </div>
 </template>
 
@@ -18,6 +17,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    #root{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .center{
 
+    }
 </style>

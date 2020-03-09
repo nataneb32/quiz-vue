@@ -13,7 +13,7 @@ export default {
   name: 'App',
   computed:{
     finish(){
-      return !this.$store.state.finish
+      return this.$store.state.stage != this.$store.state.questions.length
     }
   },
   components:{
