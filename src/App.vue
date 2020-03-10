@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-
-    <Question v-if="finish"/>
+    <SideBar/>
+    <Question v-if="hasQuestion"/>
     <Result v-else/>
   </div>
 </template>
@@ -9,16 +9,19 @@
 <script>
 import Question from './components/Question'
 import Result from './components/Result'
+import SideBar from './components/SideBar'
+
 export default {
   name: 'App',
   computed:{
-    finish(){
-      return this.$store.state.stage != this.$store.state.questions.length
+    hasQuestion(){
+      return this.$store.state.stage < (this.$store.state.questions.length)
     }
   },
   components:{
     Question,
-    Result
+    Result,
+    SideBar
   }
 }
 </script>
@@ -38,5 +41,7 @@ export default {
   margin: 0;
   width: 100vw;
   height: 100vh;
+  grid-template-areas: ". .";
+  grid-template-columns: 300px auto;
 }
 </style>
