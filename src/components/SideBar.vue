@@ -1,0 +1,84 @@
+<template>
+  <div id="root">
+      <div :class="'stage '+ isActive(index)" v-for="(stage,index) in stages" :key="index">
+          {{index}}
+            <div class="title">{{stage.title}}</div>
+      </div>
+      <div class="stage">
+          Finish
+      </div>
+  </div>
+</template>
+
+<script>
+export default {
+    name: "SideBar",
+    computed:{
+        stages(){
+            let stages = this.$store.state.questions
+            return stages
+        }
+
+    },
+    methods:{
+        isActive(index){
+            if(this.$store.state.stage > index){
+                return " is-active"
+            }else{
+                return ""
+            }
+        }
+    }
+}
+</script>
+
+<style scoped>
+    #root{
+        display: grid;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        grid-gap: 10px;
+    }
+    .stage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+        width: 100px;
+
+    }
+    .stage:before{
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: red;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    .stage:after{
+        content: "";
+        position: absolute;
+        background: red;
+        height: 0%;
+        transition: height 1s ease-out;
+        width: 10px;
+        align-self: center;
+        top: 50%;
+        z-index: -1;
+        /*animation-name: nextStep;*/
+    }
+    .stage.is-active:after{
+        height: 100% !important;
+    }
+    .stage .title{
+        position: absolute;
+        left: 100%;
+        width: 200px;
+    }
+
+</style>
