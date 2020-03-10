@@ -12,6 +12,19 @@ return new Vuex.Store({
         questions:[ //here is the questions that are made 
             {
                 title: "Titulo da pergunta?",
+
+                options:[
+                    {
+                        img: "https://via.placeholder.com/300x200",
+                        
+                    },
+                    {img: "https://via.placeholder.com/300x200"},
+                    {img: "https://via.placeholder.com/300x200"},
+                    {img: "https://via.placeholder.com/300x200"}
+                ]
+            },
+            {
+                title: "Titulo da pergunta2?",
                 options:[
                     {img: "https://via.placeholder.com/300x200"},
                     {img: "https://via.placeholder.com/300x200"},
@@ -20,7 +33,16 @@ return new Vuex.Store({
                 ]
             },
             {
-                title: "Titulo da pergunta2?",
+                title: "Titulo da pergunta3?",
+                options:[
+                    {img: "https://via.placeholder.com/300x200"},
+                    {img: "https://via.placeholder.com/300x200"},
+                    {img: "https://via.placeholder.com/300x200"},
+                    {img: "https://via.placeholder.com/300x200"}
+                ]
+            },
+            {
+                title: "Titulo da pergunta4?",
                 options:[
                     {img: "https://via.placeholder.com/300x200"},
                     {img: "https://via.placeholder.com/300x200"},
@@ -48,8 +70,10 @@ return new Vuex.Store({
                 execute(state){
                     //check if there is another question
                     if(state.questions.length <= state.stage){
+
                         return false
                     }
+                    console.log(state)
                     state.stage++
                     state.answers.push(answer)
                     return true
