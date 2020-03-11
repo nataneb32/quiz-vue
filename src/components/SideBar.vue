@@ -55,7 +55,8 @@ export default {
         position: absolute;
         width: 40px;
         height: 40px;
-        background: red;
+        background: white;
+        border: 3px solid #a3a3a3;
         border-radius: 50%;
         z-index: -1;
     }
@@ -63,17 +64,20 @@ export default {
     .stage:after{
         content: "";
         position: absolute;
-        background: red;
+        background: #55b776;
         height: 0%;
         transition: height 1s ease-out;
-        width: 10px;
+        width: 3px;
         align-self: center;
         top: 50%;
-        z-index: -1;
+        z-index: -2;
         /*animation-name: nextStep;*/
     }
     .stage.is-active:after{
         height: 100% !important;
+    }
+    .stage.is-active::before{
+        border: 3px solid #55b776;
     }
     .stage .title{
         position: absolute;
