@@ -40,6 +40,11 @@ export default {
 </script>
 
 <style scoped>
+    @media only screen and (max-width: 800px)  {
+        #root{
+            display:  none!important;
+        }
+    }
     #root{
         display: grid;
         flex-direction: column;

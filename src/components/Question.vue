@@ -1,7 +1,7 @@
 <template>
   <div id="root">
     <h1>{{question.title}}</h1>
-    <button @click="undo">Undo</button>
+    <button class="undo" @click="undo">    <font-awesome-icon icon="arrow-left" color="#2c3e50"/></button>
     <div class="painel">
         <div class="option" v-for="(option,index) in question.options" :key="`option-${index}`">
             <img :src="option.img" @click="nextStage(index)" alt="">
@@ -31,6 +31,33 @@ export default {
 </script>
 
 <style scoped>
+
+.undo{
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+}
+.undo:before{
+    content: "";
+
+    display: block;
+    text-align: center;
+    position: absolute;
+    top:-10px;
+    bottom: -10px;
+    left:-10px;
+    right: -10px;
+    padding: 15px;
+    border: 3px solid #2c3e50;
+    border-radius: 50%;
+    z-index: -3;
+}
 button{
     grid-area: button;
 }
@@ -62,6 +89,7 @@ button{
 }
 #root {
     display: flex;
+    position: relative;
     flex-direction: column;
     width: 100%;
     height: 100%;

@@ -31,6 +31,11 @@ export default {
   margin: 0;
   padding: 0;
 }
+@media only screen and (max-width: 800px)  {
+    #app{
+      display: flex!important;      
+    }
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
