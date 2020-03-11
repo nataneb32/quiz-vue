@@ -4,7 +4,7 @@
           {{index}}
             <div class="title">{{stage.title}}</div>
       </div>
-      <div class="stage">
+      <div :class="'stage '+ isFinish() " >
           Finish
       </div>
   </div>
@@ -21,6 +21,13 @@ export default {
 
     },
     methods:{
+        isFinish(){
+            if(this.$store.state.stage >= this.$store.state.questions.length ){
+                return 'finish'
+            }else{
+                return ''
+            }
+        },
         isActive(index){
             if(this.$store.state.stage > index){
                 return " is-active"
@@ -77,6 +84,9 @@ export default {
         height: 100% !important;
     }
     .stage.is-active::before{
+        border: 3px solid #55b776;
+    }
+    .stage.finish::before{
         border: 3px solid #55b776;
     }
     .stage .title{
