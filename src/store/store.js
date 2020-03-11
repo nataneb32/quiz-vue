@@ -1,4 +1,5 @@
 import Vuex from "vuex";
+import questions from "../jsons/questions.json";
 
 function createStore(){
 //
@@ -9,7 +10,8 @@ return new Vuex.Store({
         stage: 0,
         history: [],
         answers: [],
-        questions:[ //here is the questions that are made 
+        questions,
+        questions1:[ //here is the questions that are made 
             {
                 title: "Titulo da pergunta?",
 
