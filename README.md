@@ -1,21 +1,24 @@
-# wrg
-
-## Project setup
+# Um quiz flexivel 
+Esse projeto é feito em vue.js. Você podera editar e criar quizes flexivelmente.
+## Baixar e configurar o projeto 
+```
+git clone https://github.com/nataneb32/quiz-vue.git
+```
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Rodar o servidor web
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Compilar os arquivos estaticos
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### Analise estatica 
 ```
 yarn lint
 ```
