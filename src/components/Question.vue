@@ -1,16 +1,17 @@
 <template>
   <div id="root">
     <h1>{{question.title}}</h1>
-    <button class="undo" @click="undo">    <font-awesome-icon icon="arrow-left" color="#2c3e50"/></button>
+    <button class="undo" @click="undo"><font-awesome-icon icon="arrow-left" color="#2c3e50"/></button>
     <div class="painel">
         <div class="option" v-for="(option,index) in question.options" :key="`option-${index}`">
-            <img :src="option.img" @click="nextStage(index)" alt="">
+            <Option :option="option"/>
         </div>
     </div>
   </div>
 </template>
 
 <script>
+import Option from './Option'
 export default {
     name: "Question",
     computed:{
@@ -26,12 +27,17 @@ export default {
         undo(){
             this.$store.commit('undoCommand')
         }
+    },
+    components:{
+        Option
     }
 }
 </script>
 
 <style scoped>
-
+h1 {
+    font-family: 'Source Sans Pro';
+}
 .undo{
     display: inline-block;
     position: absolute;
@@ -61,20 +67,12 @@ export default {
 button{
     grid-area: button;
 }
-.option img{
-    transition: transform .5s ease;
-    width: 100%;
-}
-.option img:hover{
-    transform: scale(1.5);
-}
 .option {
     display: flex;
     align-items: stretch;
     justify-content: stretch;
     overflow: hidden;
-    border: 3px solid #cacaca;
-    border-radius: 4px;
+
 }
 .painel{
     max-width: 800px;
