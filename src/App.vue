@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Source+Sans+Pro&display=swap');
 * {
   margin: 0;
   padding: 0;

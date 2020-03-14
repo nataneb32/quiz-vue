@@ -5,7 +5,7 @@
             <div class="title">{{stage.title}}</div>
       </div>
       <div :class="'stage '+ isFinish() " >
-          Finish
+          <font-awesome-icon icon="flag-checkered"/>
       </div>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
     methods:{
         isFinish(){
             if(this.$store.state.stage >= this.$store.state.questions.length ){
-                return 'finish'
+                return ' finish'
             }else{
                 return ''
             }
@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style scoped>
+
     @media only screen and (max-width: 800px)  {
         #root{
             display:  none!important;
@@ -60,7 +61,7 @@ export default {
         position: relative;
         height: 100%;
         width: 100px;
-
+        font-family: 'Baloo Chettan 2';
     }
     .stage:before{
         content: "";

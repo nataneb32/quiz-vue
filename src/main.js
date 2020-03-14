@@ -3,10 +3,12 @@ import App from './App.vue'
 import Vuex from 'vuex'
 import createStore from './store/store'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft,faFlagCheckered } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faArrowLeft)
+library.add(faFlagCheckered)
+
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
