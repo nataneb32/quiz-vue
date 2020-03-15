@@ -1,6 +1,6 @@
 <template>
-  <img v-if="option.type == 'img'" :src="option.img" v-on:click="nextStage(option.mutation)"/>
-  <div v-else-if="option.type == 'color'" id="root">
+  <img v-if="option.type == 'img'" class="img" :src="option.img" v-on:click="click"/>
+  <div v-else-if="option.type == 'color'" class="color" id="root">
       <div class="color-pallet">
             <div  v-bind:style="{background: colors[0]}"></div>
             <div  v-bind:style="{background: colors[1]}"></div>
@@ -50,18 +50,15 @@ export default {
         }
     },
     methods: {
-        nextStage(answer){
-            this.$store.dispatch('nextStage',answer)
-        },
-        undo(){
-            this.$store.commit('undoCommand')
-        },
         generateColors(){
             this.colors = [randomColor()]
             this.colors[1] = increase_brightness(this.$data.colors[0],50)
             this.colors[2] = increase_brightness(this.$data.colors[0],75)
             this.colors[3] = increase_brightness(this.$data.colors[0],90)
             this.text = "asdasd"
+        },
+        click(){
+            this.$emit('click',this.option)
         }
     },
     data:()=>{

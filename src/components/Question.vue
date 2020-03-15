@@ -3,7 +3,7 @@
     <h1>{{question.title}}</h1>
     <button class="undo" @click="undo"><font-awesome-icon icon="arrow-left" color="#2c3e50"/></button>
     <div class="painel">
-        <div class="option" v-for="(option,index) in question.options" :key="`option-${index}`">
+        <div class="option" v-for="(option,index) in question.options" @click="nextStage(option.answer)" :key="`option-${index}`">
             <Option :option="option"/>
         </div>
     </div>
