@@ -8,7 +8,11 @@ git clone https://github.com/nataneb32/quiz-vue.git
 yarn install
 ```
 
-### Rodar o servidor web
+### Rodar servidor com hot-reload
+```
+yarn serve
+```
+### Rodar testes(jest)
 ```
 yarn serve
 ```
