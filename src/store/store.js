@@ -1,11 +1,9 @@
 import Vuex from "vuex";
 import questions from "../jsons/questions.json";
+import Vue from 'vue'
 
-function createStore(){
-//
-// I'm using the command pattern, because it brings an easy to created a undo/redo 
-//
-return new Vuex.Store({
+Vue.use(Vuex)
+const store = new Vuex.Store({
     state:{
         stage: 0,
         history: [],
@@ -94,5 +92,5 @@ return new Vuex.Store({
 
     }
 });
-}
-export default createStore;
+
+export default store;

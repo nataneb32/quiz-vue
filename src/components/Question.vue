@@ -1,5 +1,5 @@
 <template>
-  <div id="root">
+  <div class="questions" id="root">
     <h1>{{question.title}}</h1>
     <button class="undo" @click="undo"><font-awesome-icon icon="arrow-left" color="#2c3e50"/></button>
     <div class="painel">

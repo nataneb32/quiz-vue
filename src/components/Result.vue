@@ -1,5 +1,5 @@
 <template>
-    <div id="root">
+    <div class="result" id="root">
         <div class="center">
             <div>Esse é o seu resultado</div>
         </div>

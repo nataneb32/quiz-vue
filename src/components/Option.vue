@@ -42,8 +42,8 @@ export default {
     name: "Option",
     props: ['option',],
     mounted(){
-        console.log(this.option)
-        if(this.option.random){
+        
+        if(this.option.type == 'color') if(this.option.random){
             this.generateColors()
         }else{
             this.colors = this.option.colors
