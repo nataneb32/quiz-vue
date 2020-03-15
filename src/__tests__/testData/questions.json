@@ -1,0 +1,94 @@
+[
+    {
+        "title":"A pergunta ?",
+        "options":[
+            {
+                "type":"img",
+                "img": "https://media.licdn.com/dms/image/C560BAQHMnA03XDdf3w/company-logo_200_200/0?e=2159024400&v=beta&t=C7KMOtnrJwGrMXmgIk2u1B8a7VRfgxMwXng9cdP9kZk"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"color",
+                "random": true
+            },
+            {
+                "type":"color",
+                "colors": ["#fff","#000","#aaa","#af3412"]
+            }
+        ]
+    },
+    {
+        "title":"A pergunta feita 2?",
+        "options":[
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            }
+        ]
+    },
+    {
+        "title":"A pergunta feita 3?",
+        "options":[
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            }
+        ]
+    },
+    {
+        "title":"A pergunta feita 4?",
+        "options":[
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            },
+            {
+                "type":"img",
+                "img": "https://via.placeholder.com/300x200"
+            }
+        ]
+    }
+]
