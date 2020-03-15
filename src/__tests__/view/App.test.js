@@ -1,12 +1,13 @@
 import { mount , shallowMount } from '@vue/test-utils'
 import App from '@/App'
 import Result from '@/components/Result'
-import questions from './testData/questions'
+import questions from '../testData/questions'
 
 describe('App', () => {
   test('is a Vue instance', () => {
 
-    const wrapper = shallowMount(App,{mocks:{
+    const wrapper = shallowMount(App,{
+      mocks:{
       $store:{
         state:{
           stage: 0,

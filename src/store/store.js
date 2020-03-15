@@ -2,56 +2,21 @@ import Vuex from "vuex";
 import questions from "../jsons/questions.json";
 import Vue from 'vue'
 
-Vue.use(Vuex)
-const store = new Vuex.Store({
-    state:{
+
+export function defaultState(){
+    return {
         stage: 0,
         history: [],
         answers: [],
         questions,
-        questions1:[ //here is the questions that are made 
-            {
-                title: "Titulo da pergunta?",
+    }
+}
 
-                options:[
-                    {
-                        img: "https://via.placeholder.com/300x200",
-                        
-                    },
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"}
-                ]
-            },
-            {
-                title: "Titulo da pergunta2?",
-                options:[
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"}
-                ]
-            },
-            {
-                title: "Titulo da pergunta3?",
-                options:[
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"}
-                ]
-            },
-            {
-                title: "Titulo da pergunta4?",
-                options:[
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"},
-                    {img: "https://via.placeholder.com/300x200"}
-                ]
-            }
-        ]
-    },
+Vue.use(Vuex)
+const state = defaultState()
+console.log(state)
+const store = new Vuex.Store({
+    state,
     mutations: {
         executeCommand(state,command){
             if(command.execute(state)){
@@ -68,12 +33,13 @@ const store = new Vuex.Store({
 
             const cmd = {
                 execute(state){
+                    console.log(state.questions)
+
                     //check if there is another question
                     if(state.questions.length <= state.stage){
 
                         return false
                     }
-                    console.log(state)
                     state.stage++
                     state.answers.push(answer)
                     return true
