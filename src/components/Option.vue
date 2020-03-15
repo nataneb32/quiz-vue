@@ -7,6 +7,7 @@
             <div  v-bind:style="{background: colors[2]}"></div>
             <div  v-bind:style="{background: colors[3]}"></div>
       </div>
+        <button v-show="this.option.random" class="icon" @click="generateColors" ><font-awesome-icon icon="redo"/></button>
   </div>
   <div v-else>Esse tipo de opção não existe</div>
 </template>
@@ -32,26 +33,43 @@ function increase_brightness(hex, percent){
        ((0|(1<<8) + g + (256 - g) * percent / 100).toString(16)).substr(1) +
        ((0|(1<<8) + b + (256 - b) * percent / 100).toString(16)).substr(1);
 }
+function randomColor(){
+
+    return "#"+((1<<24)*((Math.random() * 0.5) + 0.5)|0).toString(16)
+} 
 
 export default {
     name: "Option",
     props: ['option',],
+    mounted(){
+        console.log(this.option)
+        if(this.option.random){
+            this.generateColors()
+        }else{
+            this.colors = this.option.colors
+        }
+    },
     methods: {
-    nextStage(answer){
-        this.$store.dispatch('nextStage',answer)
-    },
-    undo(){
-        this.$store.commit('undoCommand')
-    },
+        nextStage(answer){
+            this.$store.dispatch('nextStage',answer)
+        },
+        undo(){
+            this.$store.commit('undoCommand')
+        },
+        generateColors(){
+            this.colors = [randomColor()]
+            this.colors[1] = increase_brightness(this.$data.colors[0],50)
+            this.colors[2] = increase_brightness(this.$data.colors[0],75)
+            this.colors[3] = increase_brightness(this.$data.colors[0],90)
+            this.text = "asdasd"
+        }
     },
     data:()=>{
-        function randomColor(){
-            return "#"+((1<<24)*Math.random()|0).toString(16)
-        } 
-        let color = randomColor();
         return {
-            colors:[color,increase_brightness(color,50),increase_brightness(color,75),increase_brightness(color,85),increase_brightness(color,90)]
+            colors:[],
+            text: ""
         }
+        
     }
 }
 </script>
@@ -85,5 +103,13 @@ export default {
 }
  img:hover{
     transform: scale(1.5);
+}
+.icon{
+    position: absolute;
+    top:10px;
+    left:10px;
+    background: none;
+    border: none;
+    padding: 4px;
 }
 </style>

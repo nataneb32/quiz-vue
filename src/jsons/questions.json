@@ -19,7 +19,12 @@
                 "img": "https://via.placeholder.com/300x200"
             },
             {
-                "type":"color"
+                "type":"color",
+                "random": true
+            },
+            {
+                "type":"color",
+                "colors": ["#fff","#000","#aaa","#af3412"]
             }
         ]
     },
